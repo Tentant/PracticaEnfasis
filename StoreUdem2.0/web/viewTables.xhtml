@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+             <title>Menu de Usuario</title>
+            <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}"></f:event>
+            <h:outputStylesheet name="css/jsfcrud.css"/>
+            <f:facet name="bu">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces2</title>
+                
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">               
+
+                <p:layoutUnit position="east" size="250" closable="true" collapsible="true">
+                    <p align="center">Udem</p>
+                    <p align="center">Medellin</p>
+                    <p align="center">2018 II</p>
+                    <p align="center">Integrantes</p>
+                    <p align="center">Juan Fernando Arteaga Acevedo</p>
+                    <p align="center">Santiago Arciniegas Carmona</p>
+                    <p align="center">Michelle Gomez Villa</p>
+                    <p align="center">Julian David Restrepo Munoz</p>
+                    
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Contenido">
+                            <p:menuitem value="Inicio" outcome="viewTables"></p:menuitem>
+                            <p:menuitem value="Equipos" outcome="/equipment/List" />
+                            <p:menuitem value="Productos" outcome="/products/List" />
+                            
+                            
+                           
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                                     
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+
+
+</html>
+
