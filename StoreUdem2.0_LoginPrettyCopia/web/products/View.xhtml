@@ -29,8 +29,11 @@
                         <h:outputText value="#{bundle.ViewProductsLabel_description}"/>
                         <h:outputText value="#{productsController.selected.description}" title="#{bundle.ViewProductsTitle_description}"/>
                         <h:outputText value="#{bundle.ViewProductsLabel_uso}"/>
-                        <h:outputText value="#{productsController.selected.uso}" title="#{bundle.ViewProductsTitle_uso}"/>
+                        <h:outputText value="#{productsController.selected.mostrarUso()}" title="#{bundle.ViewProductsTitle_uso}"/>
+                         <h:outputText value="#{bundle.ViewProductsTitle_garantia}" title="#{bundle.ViewProductsTitle_garantia}"/>
+                        <h:outputText value="#{productsController.selected.verGarantia()}"/>
                     </p:panelGrid>
+                         
                     <p:commandButton value="#{bundle.Close}" onclick="ProductsViewDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

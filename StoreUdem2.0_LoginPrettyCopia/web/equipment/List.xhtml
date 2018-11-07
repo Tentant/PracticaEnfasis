@@ -69,7 +69,7 @@
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{equipmentController.mostrarDialogoEquiCrear()}" update=":EquipmentCreateForm"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EquipmentViewForm" oncomplete="PF('EquipmentViewDialog').show()" disabled="#{empty equipmentController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{equipmentController.mostrarDialogoEquiEditar()}" disabled="#{empty equipmentController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{equipmentController.mostrarDialogoEquiEditar()}" update=":EquipmentEditForm" disabled="#{empty equipmentController.selected}"/>
                             <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{equipmentController.mostrarDialogoEquiBorrar()}" update=":growl,datalist" disabled="#{empty equipmentController.selected}"/>
                         </f:facet>
                     </p:dataTable>

@@ -57,6 +57,7 @@ public class EquipmentController implements Serializable {
     }
 
     public void create() {
+        System.out.println("Hola probando ");
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("EquipmentCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.

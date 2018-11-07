@@ -178,7 +178,6 @@ public class ProductsController implements Serializable {
     public void mostrarDialogoEditar(){
         planC = new PlantillaController();
         String redireccion = planC.verificarProducRolEditar();
-        prepareCreate();
         RequestContext req = RequestContext.getCurrentInstance();
         System.out.println("PF("+"'"+redireccion+"'"+").show()");
         req.execute("PF("+"'"+redireccion+"'"+").show()");

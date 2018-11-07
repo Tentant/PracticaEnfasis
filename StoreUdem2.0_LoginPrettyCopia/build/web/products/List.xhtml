@@ -77,13 +77,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductsTitle_uso}"/>
                             </f:facet>
-                            <h:outputText value="#{item.uso}"/>
+                            <h:outputText value="#{item.mostrarUso()}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="prueba" value="Prueba" oncomplete="PF('NoPermisos').show()"/>
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{productsController.mostrarDialogoCrear()}" update=":ProductsCreateForm"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProductsViewForm" oncomplete="PF('ProductsViewDialog').show()" disabled="#{empty productsController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{productsController.mostrarDialogoEditar()}" disabled="#{empty productsController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ProductsEditForm" actionListener="#{productsController.mostrarDialogoEditar()}" disabled="#{empty productsController.selected}"/>
                             <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{productsController.mostrarDialogoProBorrar()}" update=":growl,datalist" disabled="#{empty productsController.selected}"/>
                         </f:facet>
                     </p:dataTable>
