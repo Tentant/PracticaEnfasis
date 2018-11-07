@@ -3,6 +3,7 @@ package udem.edu.co.controller;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -28,13 +29,23 @@ public class PlantillaController implements Serializable{
             System.out.println("Entre el catch");
            
         }
-//        String s = "1234";
-//        byte[] authBytes = s.getBytes(StandardCharsets.UTF_8);
-//        String encoded = Base64.getEncoder().encodeToString(authBytes);
-//        System.out.println(s + " => " + encoded);
-//        
-//        System.out.println("Voy a cambiar de página");
-        //return "permisos.xhtml";
+    }
+        public void verificarSesionGerente(){
+        try {
+            Object us =  FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+            //System.out.println(us.getIdrol().getIdrol());
+            if (us == null) {
+            }else{
+                Users user = (Users)us;
+                if (!user.getIdrol().getRol().equals("gerente")) {
+                    
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("../viewTables.xhtml");
+                    FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN,"Aviso","Usted no tiene permisos"));
+                }               
+            }
+            
+        } catch (Exception e) {        
+        }
     }
     
     public String verificarProducRolCrear(){
@@ -125,6 +136,27 @@ public class PlantillaController implements Serializable{
         } catch (Exception e) {          
         }    
     return rol;
+    }
+        
+    public String paginaUsers(){
+        String pagina = "users/List";
+        
+        try {
+            System.out.println("Estoy probando para ver si un gerente");
+            Object us =  FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+            //System.out.println(us.getIdrol().getIdrol());
+            if (us == null) {      
+            }else{              
+                Users user = (Users)us;               
+                String rol = user.getIdrol().getRol();
+                if (rol.equals("contador") || rol.equals("vendedor")) {
+                    pagina = "NoPermisos";
+                }
+            }            
+        } catch (Exception e) {          
+        } 
+        
+        return pagina;
     }
     
     
