@@ -102,7 +102,7 @@ public class LoginController implements Serializable {
                 //Almacenar en la sesión de JSF
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", us);
                 //redirection = "viewTables"; //Si el usuario esta y la constraseña fue correcta, puede ingresar  
-                redirection = "viewTables.xhtml";
+                redirection = "viewTables_1.xhtml";
             }else{
                 FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN,"Aviso","Credenciales incorrectas"));//uno de los datos o ambos pueden estar mal ingresados
             }   

@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="StoreUdem2.0" default="default" basedir=".">
-    <description>Builds, tests, and runs the project StoreUdem2.0.</description>
+<project name="StoreUdem2.0_LoginPrettyCopia" default="default" basedir=".">
+    <description>Builds, tests, and runs the project StoreUdem2.0_LoginPrettyCopia.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
