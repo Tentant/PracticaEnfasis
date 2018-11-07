@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+   
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListProductsTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+           
+            <h:form id="ProductsListForm">
+            <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}"></f:event>
+                <p:panel header="#{bundle.ListProductsTitle}">
+                    <p:dataTable id="datalist" value="#{productsController.items}" var="item"
+                                 selectionMode="single" selection="#{productsController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.idproducts}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_idproducts}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idproducts}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_name}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_brand}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.brand}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_dateBuy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dateBuy}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_cost}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cost}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_price}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.price}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_description}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.description}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProductsTitle_uso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.uso}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="prueba" value="Prueba" oncomplete="PF('NoPermisos').show()"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{productsController.mostrarDialogoCrear()}" update=":ProductsCreateForm"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProductsViewForm" oncomplete="PF('ProductsViewDialog').show()" disabled="#{empty productsController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" actionListener="#{productsController.mostrarDialogoEditar()}" disabled="#{empty productsController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{productsController.mostrarDialogoProBorrar()}" update=":growl,datalist" disabled="#{empty productsController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+            <ui:include src="NoPermisos.xhtml"/>
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>
