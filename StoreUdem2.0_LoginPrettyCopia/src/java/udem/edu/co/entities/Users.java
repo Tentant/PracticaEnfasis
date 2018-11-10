@@ -76,9 +76,7 @@ public class Users implements Serializable {
     }
 
     public String getPassword() {
-        
-        
-        return this.password;
+        return password;
     }
 
     
@@ -116,6 +114,17 @@ public class Users implements Serializable {
             return false;
         }
         return true;
+    }
+    
+    public String decodificarPassword(){
+        
+        String passDecode = getPassword();
+        
+        byte[] decoded = Base64.getDecoder().decode(passDecode);
+        password = new String(decoded, StandardCharsets.UTF_8);
+        System.out.println("Password solo"+password);
+        
+        return password;
     }
 
     @Override

@@ -15,7 +15,8 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </h:head>
-    <h:body styleClass="cyan lighten-5">
+    <h:body style="    background-color: cadetblue;
+                       padding-top: 0%;">
         <div class="valign-wrapper" id="login-page">
             <div class="container">
                 <div class="center-align">
@@ -38,7 +39,7 @@
                                                     <p:password id="password" value="#{LoginController.usuario.password}" required="true" requiredMessage="La contraseña es requerida"/> 
                                                 </div>
                                                 <div class="col s12 input-field">
-                                                    <h:commandLink action="#{LoginController.loginSession()}" value="Login" styleClass="btn btn-large"/>
+                                                    <h:commandLink action="#{LoginController.loginSession()}" value="Login" styleClass="btn btn-large" style="background-color: orange;"/>
                                                 </div>
                                             </div>
 

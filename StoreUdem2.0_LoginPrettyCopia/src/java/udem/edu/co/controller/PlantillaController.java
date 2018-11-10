@@ -39,7 +39,7 @@ public class PlantillaController implements Serializable{
                 Users user = (Users)us;
                 if (!user.getIdrol().getRol().equals("gerente")) {
                     
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("../viewTables.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("viewTables.xhtml");
                     FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN,"Aviso","Usted no tiene permisos"));
                 }               
             }
