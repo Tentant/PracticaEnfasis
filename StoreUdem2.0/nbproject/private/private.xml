@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/principal.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/PlantillaController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/dtos/Rol.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/dtos/Users.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/dtos/Equipment.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/webService/RestEquipment.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/ProductsController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/equipment/Create.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/viewTables.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/equipment/List.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/RolController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/EquipmentController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/welcomePrimefaces.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/webService/RestProducts.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/index.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/dtos/Products.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/WEB-INF/faces-config.xml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/permisos.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/LoginController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/web/WEB-INF/templates/plantilla.xhtml</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/webService/RestRol.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/controller/UsersController.java</file>
+            <file>file:/home/suru/Suru/Enfasis/Estable%20Login%20Bonito/StoreUdem2.0_LoginPrettyCopia/src/java/udem/edu/co/webService/RestUsers.java</file>
+        </group>
+    </open-files>
+</project-private>
