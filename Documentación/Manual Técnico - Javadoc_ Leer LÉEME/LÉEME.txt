@@ -1,0 +1,2 @@
+Instrucciones:
+Abrir el archivo llamado index.html con un navegador web.
