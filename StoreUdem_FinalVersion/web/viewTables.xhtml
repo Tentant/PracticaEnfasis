@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+    <h:head>
+        <title>Home</title>
+        <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}"></f:event>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <!-- Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </h:head>
+        <h:body style="background-color: cadetblue;padding-top: 5%;">
+        <div class="valign-wrapper" id="menuForm">
+            <div class="container">
+                <div class="center-align">
+                    <div class="row">
+                        <div class="col s6 offset-s3">
+                            <div class="card">
+                                <div class="card-content">
+                                    <img class="responsive-img" style="max-width: 64px;" src="https://imageog.flaticon.com/icons/png/512/25/25694.png?resize=256%2C256" />
+                                    <div class="left-align">
+                                        <h:form id="login-form">
+                                            <p:growl autoUpdate="true"/>
+                                            <div class="row">
+                                                <div class="col s12 input-field center-align">
+                                                    <h:commandLink action="viewTables" value="Home" styleClass="btn btn-large" style="min-width: 150px;background-color: blueviolet;"/>
+                                                </div>
+                                                <div class="col s12 input-field center-align">
+                                                    <h:commandLink action="/equipment/List" value="Equipos" styleClass="btn btn-large" style="min-width: 150px;background-color: orange; #{equipmentController.habilitarBoton()}"/>
+                                                </div>
+                                                <div class="col s12 input-field center-align">
+                                                    <h:commandLink action="/products/List" value="Productos" styleClass="btn btn-large" style="min-width: 150px;background-color: orange;"/>
+                                                </div>
+                                                <div class="col s12 input-field center-align">
+                                                    <h:commandLink action="/users/List" value="Usuarios" styleClass="btn btn-large" style="min-width: 150px;background-color: orange; #{usersController.habilitarBoton()}" />
+                                                    
+                                                </div>
+                                                <div class="col s12 input-field center-align">
+                                                    <h:commandLink action="index" value="Log out" styleClass="btn btn-large" style="min-width: 150px;background-color: #D20005;" actionListener="#{LoginController.cerrarSesion()}"/>
+                                                </div>
+                                                
+                                            </div>
+
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).on("ready",function(){
+                $('#login-page').css({'height': window.innerHeight + 'px'});
+            });
+        </script>
+    </h:body>
+
+    </f:view>
+
+</html>
+
