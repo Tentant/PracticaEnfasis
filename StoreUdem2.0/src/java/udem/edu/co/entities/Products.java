@@ -151,7 +151,7 @@ public class Products implements Serializable {
         this.description = description;
     }
 
-    public String getUso() {
+    public short getUso() {
         String tipo = "";
         if (uso ==0 ) {
             
@@ -159,7 +159,7 @@ public class Products implements Serializable {
         }else{
             tipo = "usado";
         }
-        return tipo;
+        return uso;
     }
 
     public void setUso(short uso) {
@@ -189,6 +189,31 @@ public class Products implements Serializable {
     @Override
     public String toString() {
         return "udem.edu.co.entities.Products[ idproducts=" + idproducts + " ]";
+    }
+    
+    public String verGarantia(){
+        String garantia = "";
+        if (uso == 0) {
+            garantia  = "3 años de garantia";
+        }else{
+            garantia = "1 año de garantia";
+            
+        }      
+        return garantia;
+    }
+    
+    public String mostrarUso(){
+        getUso();
+        String usado = "";
+        if (uso == 0) {
+            usado = "Nuevo";
+        }else{
+            usado = "De segunda mano";
+        
+        }
+        return usado;
+                
+    
     }
     
 }

@@ -11,21 +11,37 @@
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
 
-    <h:body>
+    <h:body style=" background-color: cadetblue;
+                    font-family: sans-serif;
+                    ">
 
-        <p:growl id="growl" life="3000" />
+        <p:growl id="growl" life="3000"/>
 
-        <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
-                <h:form id="menuForm">
-                    <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="Equipment" outcome="/equipment/List.xhtml" />
+        <p:layout fullPage="false" style="  min-width: 700px;
+                                            max-width: 1200px;
+                                            min-height: 700px;
+                                            max-height: 1200px;
+                                            background-color: cadetblue;
+                                            font-family: fantasy;
+                                            padding-left: 20%;
+                                            padding-right: 20%;
+                                            padding-top: 2%;">
+            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}" rendered="true" styleClass="cyan lighten-4" style=" align-content: center;
+                                                                                                                                    border-style: initial;
+                                                                                                                                    background-color: orange;
+                                                                                                                                    padding-bottom: 2%;">
+                <h:form id="menuForm" style="   align-content: center;
+                                                border-style: initial;
+                                                background-color: orange;
+                                                padding-bottom: 2%;
+                                                padding-top: 2%;
+                                                align-items: center;">
+    <p:menubar>
+                        <p:menuitem value="#{bundle.Home}" outcome="/viewTables" icon="ui-icon-home" class="container-fluid"/>
+                        <p:menuitem value="Equipment" outcome="/equipment/List.xhtml" style="#{equipmentController.habilitarBoton()}"/>
                             <p:menuitem value="Products" outcome="/products/List.xhtml" />
-                            <p:menuitem value="Rol" outcome="/rol/List.xhtml" />
-                            <p:menuitem value="Users" outcome="/users/List.xhtml" />
-                        </p:submenu>
+
+                            
                     </p:menubar>
                 </h:form>
             </p:layoutUnit>
@@ -34,8 +50,16 @@
                 <ui:insert name="footer"/>
             </p:layoutUnit>
 
-            <p:layoutUnit position="center">
-                <ui:insert name="body"/>
+            <p:layoutUnit position="center" style=" align-content: center;
+                                                    background-color: orange;
+                                                    max-height: 300px;
+                                                    max-width: 1100px;
+                                                    border-style: initial;
+                                                    padding-top: 2%;
+                                                    padding-left: 2%;
+                                                    padding-right: 2%;
+                                                    padding-bottom: 2%;">
+                <ui:insert name="body" class="container-fluid"/>
             </p:layoutUnit>
 
         </p:layout>

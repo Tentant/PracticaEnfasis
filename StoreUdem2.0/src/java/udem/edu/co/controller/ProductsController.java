@@ -18,6 +18,10 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import org.primefaces.context.RequestContext;
+import udem.edu.co.entities.Users;
+
+
 
 @Named("productsController")
 @SessionScoped
@@ -27,7 +31,7 @@ public class ProductsController implements Serializable {
     private udem.edu.co.ejb.ProductsFacade ejbFacade;
     private List<Products> items = null;
     private Products selected;
-
+    private PlantillaController planC;
     public ProductsController() {
     }
 
@@ -161,5 +165,18 @@ public class ProductsController implements Serializable {
         }
 
     }
+
+    public String habilitarBotonesCrud() {
+        String verBoton = "display: ";
+
+        Object us = FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+
+        Users user = (Users) us;
+        if (user.getIdrol().getRol().equals("contador")) {
+            verBoton = "display: none";
+        }
+        return verBoton;
+    }
+
 
 }

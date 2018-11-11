@@ -6,6 +6,8 @@
 package udem.edu.co.entities;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -77,7 +79,12 @@ public class Users implements Serializable {
         return password;
     }
 
+    
     public void setPassword(String password) {
+        
+        byte[] authBytes = password.getBytes(StandardCharsets.UTF_8);
+        String codificado = Base64.getEncoder().encodeToString(authBytes);
+        password = codificado;
         this.password = password;
     }
 
@@ -107,6 +114,17 @@ public class Users implements Serializable {
             return false;
         }
         return true;
+    }
+    
+    public String decodificarPassword(){
+        
+        String passDecode = getPassword();
+        
+        byte[] decoded = Base64.getDecoder().decode(passDecode);
+        password = new String(decoded, StandardCharsets.UTF_8);
+        System.out.println("Password solo"+password);
+        
+        return password;
     }
 
     @Override

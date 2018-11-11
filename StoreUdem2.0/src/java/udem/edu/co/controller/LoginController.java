@@ -7,7 +7,6 @@ import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import udem.edu.co.ejb.UsersFacade;
 import udem.edu.co.entities.Users;
@@ -51,6 +50,7 @@ public class LoginController implements Serializable {
     }
 
     public void setInitUser(String initUser) {
+        
         this.initUser = initUser;
     }
 

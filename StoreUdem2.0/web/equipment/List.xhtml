@@ -16,7 +16,7 @@
         <ui:define name="body">
             <h:form id="EquipmentListForm">
                 <p:panel header="#{bundle.ListEquipmentTitle}">
-                    <f:event type="preRenderView" listener="#{plantillaController.verificarSesion()}"></f:event>
+                    <f:event type="preRenderView" listener="#{plantillaController.verificarSesionVendedor()}"></f:event>
                     <p:dataTable id="datalist" value="#{equipmentController.items}" var="item"
                                  selectionMode="single" selection="#{equipmentController.selected}"
                                  paginator="true"
@@ -67,15 +67,15 @@
                             <h:outputText value="#{item.description}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{equipmentController.prepareCreate}" update=":EquipmentCreateForm" oncomplete="PF('EquipmentCreateDialog').show()"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" update=":EquipmentCreateForm" style="#{equipmentController.habilitarBotonesCrud()}"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EquipmentViewForm" oncomplete="PF('EquipmentViewDialog').show()" disabled="#{empty equipmentController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EquipmentEditForm" oncomplete="PF('EquipmentEditDialog').show()" disabled="#{empty equipmentController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{equipmentController.destroy}" update=":growl,datalist" disabled="#{empty equipmentController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EquipmentEditForm" disabled="#{empty equipmentController.selected}" style="#{equipmentController.habilitarBotonesCrud()}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" update=":growl,datalist" disabled="#{empty equipmentController.selected}" style="#{equipmentController.habilitarBotonesCrud()}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
             </h:form>
-
+            <ui:include src="NoPermisos.xhtml"/>
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>

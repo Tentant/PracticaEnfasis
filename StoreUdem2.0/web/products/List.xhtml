@@ -77,18 +77,18 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProductsTitle_uso}"/>
                             </f:facet>
-                            <h:outputText value="#{item.uso}"/>
+                            <h:outputText value="#{item.mostrarUso()}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{productsController.prepareCreate}" update=":ProductsCreateForm" oncomplete="PF('ProductsCreateDialog').show()"/>
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" update=":ProductsCreateForm" style="#{equipmentController.habilitarBotonesCrud()}"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProductsViewForm" oncomplete="PF('ProductsViewDialog').show()" disabled="#{empty productsController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ProductsEditForm" oncomplete="PF('ProductsEditDialog').show()" disabled="#{empty productsController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{productsController.destroy}" update=":growl,datalist" disabled="#{empty productsController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ProductsEditForm" disabled="#{empty productsController.selected}" style="#{equipmentController.habilitarBotonesCrud()}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" update=":growl,datalist" disabled="#{empty productsController.selected}" style="#{equipmentController.habilitarBotonesCrud()}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
             </h:form>
-
+            <ui:include src="NoPermisos.xhtml"/>
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>

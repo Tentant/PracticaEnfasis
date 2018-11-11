@@ -18,6 +18,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import udem.edu.co.entities.Users;
 
 @Named("equipmentController")
 @SessionScoped
@@ -27,7 +28,7 @@ public class EquipmentController implements Serializable {
     private udem.edu.co.ejb.EquipmentFacade ejbFacade;
     private List<Equipment> items = null;
     private Equipment selected;
-
+    private PlantillaController planC;
     public EquipmentController() {
     }
 
@@ -56,6 +57,7 @@ public class EquipmentController implements Serializable {
     }
 
     public void create() {
+        System.out.println("Hola probando ");
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("EquipmentCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
@@ -159,7 +161,30 @@ public class EquipmentController implements Serializable {
                 return null;
             }
         }
+    }
+    
+    public String habilitarBoton() {
+        String verBoton = "display: ";
 
+        Object us = FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+
+        Users user = (Users) us;
+        if (user.getIdrol().getRol().equals("vendedor")) {
+            verBoton = "display: none";
+        }
+        return verBoton;
+    }
+    
+    public String habilitarBotonesCrud() {
+        String verBoton = "display: ";
+
+        Object us = FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+
+        Users user = (Users) us;
+        if (user.getIdrol().getRol().equals("contador")) {
+            verBoton = "display: none";
+        }
+        return verBoton;
     }
 
 }

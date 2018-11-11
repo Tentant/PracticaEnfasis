@@ -162,4 +162,17 @@ public class UsersController implements Serializable {
 
     }
 
+    public String habilitarBoton() {
+        String verBoton = "display: ";
+
+        Object us = FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+
+        Users user = (Users) us;
+        if (!user.getIdrol().getRol().equals("gerente")) {
+            verBoton = "display: none";
+        }
+
+        return verBoton;
+    }
+
 }
